@@ -24,6 +24,6 @@
 
 <template>
   <component :is="layoutComponent">
-    <RouterView />
+    <router-view />
   </component>
 </template>

@@ -31,21 +31,18 @@ const router = createRouter({
 })
 // Navigation guard
 router.beforeEach((to, from, next) => {
-  // Zkontrolujeme, jestli máme query parametr "url"
   if (to.query.url) {
     const urlParam = to.query.url
-
-    // Na základě hodnoty parametru provést přesměrování
     if (urlParam) {
-      // Přesměrovat na /urlParam, pokud je url=GunPowder
       next({ path: `/${urlParam}` })
     }
     else {
-      next() // Pokud query neodpovídá, pokračovat na aktuální cestu
+      next()
     }
   }
   else {
-    next() // Pokud není query parametr, pokračovat normálně
+    next()
   }
 })
+
 export default router
