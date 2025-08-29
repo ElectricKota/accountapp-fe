@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { computed } from 'vue'
-  import { useRoute, useRouter } from 'vue-router'
+  import Icons from './components/Icons.vue'
+  import { useRoute } from 'vue-router'
   import DefaultLayout from './layouts/DefaultLayout.vue'
   import EmptyLayout from './layouts/EmptyLayout.vue'
 
@@ -26,4 +27,5 @@
   <component :is="layoutComponent">
     <router-view />
   </component>
+  <Icons />
 </template>
