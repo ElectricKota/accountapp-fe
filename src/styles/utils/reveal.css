@@ -1,0 +1,17 @@
+@utility reveal {
+  opacity: 0;
+  transition-property: var(--default-transition-property);
+  transition-timing-function: var(--ease-in-out);
+  transition-duration: 0.75s;
+  will-change: transform;
+
+  @media (prefers-reduced-motion), (scripting: none), print {
+    opacity: 1;
+    transform: none;
+  }
+
+  &:is([data-in]) {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -11,3 +11,10 @@
 @import "winduum/src/base/breakpoints.css";
 @import "winduum/src/base/keyframes.css";
 @import "winduum/src/base/transitions.css";
+@import "./base/breakpoints.css";
+@import "./base/keyframes.css";
+@import "./base/transitions.css";
+@import "./utils/+.css";
+@import "./components/+.css";
+@import "./theme/main.css" layer(theme);
+@import "./base/defaults.css" layer(base);

@@ -1,0 +1,14 @@
+@import "winduum/src/components/heading/props/default.css" layer(theme);
+@import "winduum/src/components/heading/default.css" layer(utilities);
+
+@utility sm {
+    .x-heading:is(&) {
+        --x-heading-font-size: var(--text-lg);
+    }
+}
+
+@utility lg {
+    .x-heading:is(&) {
+        --x-heading-font-size: var(--text-3xl);
+    }
+}
