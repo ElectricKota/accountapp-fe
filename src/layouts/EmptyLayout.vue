@@ -3,10 +3,10 @@
 </script>
 
 <template>
-  <main class="w-full h-full min-h-svh bg-body-primary">
+  <main class="w-full h-full min-h-svh bg-primary text-light">
     <!-- Layout pro login, register, splash -->
     <div class="auth-container">
-      <router-view />
+      <slot></slot>
     </div>
   </main>
 </template>

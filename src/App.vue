@@ -1,30 +1,29 @@
 <script setup lang="ts">
+  import { computed } from 'vue'
+  import { useRoute, useRouter } from 'vue-router'
+  import DefaultLayout from './layouts/DefaultLayout.vue'
+  import EmptyLayout from './layouts/EmptyLayout.vue'
+
+  const route = useRoute()
+
+  const layouts = {
+    DefaultLayout,
+    EmptyLayout,
+  }
+
+  const layoutComponent = computed(() => {
+    if (!route || !route.meta) {
+      return EmptyLayout
+    }
+
+    const layoutName = route.meta.layout || 'EmptyLayout'
+    return layouts[layoutName as keyof typeof layouts] || EmptyLayout
+  })
+
 </script>
 
 <template>
-  <div>
-    <a
-      href="https://vite.dev"
-      target="_blank"
-    >
-      <img
-        src="/vite.svg"
-        class="logo"
-        alt="Vite logo"
-      >
-    </a>
-    <a
-      href="https://vuejs.org/"
-      target="_blank"
-    >
-      <img
-        src="./assets/vue.svg"
-        class="logo vue"
-        alt="Vue logo"
-      >
-    </a>
-  </div>
+  <component :is="layoutComponent">
+    <RouterView />
+  </component>
 </template>
-
-<style>
-</style>

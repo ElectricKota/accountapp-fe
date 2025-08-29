@@ -1,20 +1,27 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
-  linkActiveClass: 'nav__item',
-  linkExactActiveClass: 'nav__item--active',
+  linkActiveClass: 'border border-red-300',
+  linkExactActiveClass: 'border border-red-600',
   history: createWebHistory(),
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'Homepage',
-    //   meta: { tableName: 'loadout' },  // Název tabulky v DB
-    //   component: HomeView
-    // },
+    {
+      path: '/splash',
+      name: 'Splash',
+      component: () => import('../views/SplashView.vue'),
+      meta: { layout: 'EmptyLayout' },
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: () => import('../views/LoginView.vue'),
+      meta: { layout: 'EmptyLayout' },
+    },
     {
       path: '/404',
       name: '404',
-      component: () => import('../views/NotFountView.vue'),
+      component: () => import('../views/NotFoundView.vue'),
+      meta: { layout: 'EmptyLayout' },
     },
     {
       path: '/:catchAll(.*)',
