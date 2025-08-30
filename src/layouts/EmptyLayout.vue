@@ -3,11 +3,9 @@
 </script>
 
 <template>
-  <main class="w-full h-full min-h-svh bg-primary text-light">
+  <main class="w-full h-full min-h-svh  opacity-0 animate-[fade-in_500ms_40ms_ease-in_forwards]">
     <!-- Layout pro login, register, splash -->
-    <div class="auth-container">
-      <slot></slot>
-    </div>
+    <slot></slot>
   </main>
 </template>
 

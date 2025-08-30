@@ -1,6 +1,7 @@
 @layer theme, base, components, utilities;
 
 @import "tailwindcss";
+@import "winduum/src/base/breakpoints.css";
 @import "tailwindcss/theme.css" layer(theme);
 @import "winduum/tailwindcss/theme/config/index.css" layer(theme);
 @import "winduum/tailwindcss/theme/default.css" layer(theme);
@@ -8,7 +9,6 @@
 @import "winduum/src/base/defaults.css" layer(base);
 @import "winduum/src/components/button/index.css" layer(components);
 @import "tailwindcss/utilities" layer(utilities);
-@import "winduum/src/base/breakpoints.css";
 @import "winduum/src/base/keyframes.css";
 @import "winduum/src/base/transitions.css";
 @import "./base/breakpoints.css";

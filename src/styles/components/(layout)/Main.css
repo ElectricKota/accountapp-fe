@@ -1,6 +1,11 @@
 @layer base {
   html {
     scroll-padding-top: var(--scroll-padding-top);
+    font-family: var(--default-font-family);
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 
     @media (min-width: 60em) and (max-width: 75.9375rem) {
       font-size: 87.5%;

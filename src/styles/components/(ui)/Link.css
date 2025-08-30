@@ -1,2 +1,39 @@
 @import "winduum/src/components/link/default.css" layer(utilities);
-@import "winduum/src/components/link/interactive.css" layer(utilities);
+
+@layer theme {
+  :root, :host {
+    --x-link-color: var(--color-accent);
+    --x-link-font-weight: var(--font-weight-semibold);
+    --x-link-font-size: var(--text-2xl);
+    --x-link-line-height: calc(1em + 0.25rem);
+  }
+}
+
+@layer utilities {
+  .x-link {
+    :where(:any-link, button:enabled, [role="button"]) {
+      transition: all var(--default-transition-duration) var(--ease-in-out);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: -0.125em;
+      text-decoration-thickness: 0.0625rem;
+
+      &:is(:hover, :focus-visible) {
+        color: var(--x-link-hover-color, var(--color-accent));
+        text-decoration-color: var(--x-link-hover-color, var(--color-accent));
+        text-underline-offset: 0.125em;
+      }
+    }
+  }
+}
+
+@utility logo {
+  .x-link:is(&) {
+    --x-link-hover-color: var(--color-light);
+
+    letter-spacing: -0.013em;
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-light);
+    line-height: 1;
+  }
+}

@@ -1,1 +1,10 @@
-@import "winduum/src/base/breakpoints.css";
+@custom-media --media-xs (min-width: 22.5rem);
+@custom-media --media-sm (min-width: 26rem);
+@custom-media --media-md (min-width: 46.5rem);
+@custom-media --media-lg (min-width: 60rem);
+@custom-media --media-xl (min-width: 76rem);
+@custom-media --media-2xl (min-width: 82rem);
+@custom-media --media-3xl (min-width: 88rem);
+@custom-media --media-4xl (min-width: 100rem);
+@custom-media --media-xxl (min-width: 126rem);
+@custom-media --media-2xxl (min-width: 158rem);

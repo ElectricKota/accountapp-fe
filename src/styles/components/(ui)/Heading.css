@@ -1,14 +1,36 @@
 @import "winduum/src/components/heading/props/default.css" layer(theme);
 @import "winduum/src/components/heading/default.css" layer(utilities);
 
-@utility sm {
-    .x-heading:is(&) {
-        --x-heading-font-size: var(--text-lg);
-    }
+@layer theme {
+  :root, :host {
+    --x-heading-font-family: "Open Sans", sans-serif;
+    --x-heading-font-weight: var(--font-weight-semibold);
+    --x-heading-font-size: var(--text-2xl);
+    --x-heading-line-height: calc(1em + 0.25rem);
+  }
 }
 
 @utility lg {
-    .x-heading:is(&) {
-        --x-heading-font-size: var(--text-3xl);
+  .x-heading:is(&) {
+    --x-heading-font-size: var(--text-3xl);
+  }
+}
+
+@utility logo {
+  .x-heading:is(&) {
+    letter-spacing: 0.013em;
+
+    --x-heading-font-size: 3rem;
+
+    font-weight: var(--font-weight-light);
+    line-height: 1;
+
+    @media (--media-sm) {
+      --x-heading-font-size: 4rem;
     }
+
+    @media (--media-md) {
+      --x-heading-font-size: 5rem;
+    }
+  }
 }

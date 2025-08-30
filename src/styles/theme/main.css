@@ -1,7 +1,7 @@
 @import "./dark.css";
 
 @theme {
-  --default-font-family: "Poppins", sans-serif;
+  --default-font-family: "Noto Sans", sans-serif;
   --default-color-space: display-p3;
   --default-color-scheme: inherit;
   --color-accent: var(--color-primary);
