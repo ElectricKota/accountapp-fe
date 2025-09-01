@@ -2,6 +2,9 @@
 
   import { PhCaretUp } from '@phosphor-icons/vue'
   import { ref, onMounted, onUnmounted } from 'vue'
+  import { useRouter } from 'vue-router'
+
+  const router = useRouter()
 
   const container = ref<HTMLElement | null>(null)
   const startY = ref(0)
@@ -108,13 +111,13 @@
 
     if (success) {
       // Animace úplného odsunutí nahoru
-      container.value.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+      container.value.style.transition = 'transform 0.4s cubic-bezier(0.11, 0, 0.5, 0)'
       container.value.style.transform = 'translateY(-100vh)'
 
       // Po dokončení animace - zde bude redirect
       setTimeout(() => {
         onSwipeUpComplete()
-      }, 400)
+      }, 300)
     } else {
       // Animace návratu dolů
       container.value.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
@@ -131,7 +134,7 @@
   const onSwipeUpComplete = () => {
     console.log('Swipe up completed! Redirecting...')
     // Zde bude později redirect
-    // router.push('/login') nebo window.location.href = '/login'
+    router.push('/login')
   }
 
   // Reset stavu po neúspěšném swipe
@@ -217,7 +220,10 @@
         2025
       </span>
     </div>
-    <div class="absolute bottom-5 md:bottom-10 flex flex-col items-center mt-40 animate-bounce ">
+    <div
+      class="absolute bottom-5 md:bottom-10 flex flex-col items-center mt-40 animate-bounce "
+      @click="onSwipeUpComplete"
+    >
       <div class="flex flex-col items-center animate-[fade-in_800ms_800ms_forwards] opacity-0">
         <PhCaretUp
           weight="bold"

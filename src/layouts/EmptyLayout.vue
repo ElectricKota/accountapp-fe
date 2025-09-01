@@ -3,9 +3,19 @@
 </script>
 
 <template>
-  <main class="w-full h-full min-h-svh  opacity-0 animate-[fade-in_500ms_40ms_ease-in_forwards]">
-    <!-- Layout pro login, register, splash -->
-    <slot></slot>
+  <main class="w-full h-full min-h-screen">
+    <router-view v-slot="{ Component }">
+      <transition
+        enter-active-class="transition-opacity duration-500 ease-in-out"
+        leave-active-class="transition-opacity duration-300 ease-in-out"
+        enter-from-class="opacity-0"
+        leave-to-class="opacity-0"
+        mode="out-in"
+      >
+        <component :is="Component" />
+      </transition>
+    </router-view>
+    <!-- Slot zůstává funkční -->
   </main>
 </template>
 

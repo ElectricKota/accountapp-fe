@@ -12,9 +12,11 @@
 
 @layer utilities {
   .x-control {
+    --x-control-outline-width: 0;
+
     &[data-active] label,
-    :where(input, textarea):is(:focus, [placeholder]) ~ label,
-    :where(select):is([data-placeholder]) ~ label {
+    :where(input, textarea):is(:focus) ~ label,
+    input:not(:placeholder-shown) ~ label {
       transform: translateY(calc(var(--x-control-label-translate-y) * -1)) scale(var(--x-control-label-scale));
       opacity: var(--x-control-label-focus-opacity, 0.5);
     }

@@ -16,6 +16,12 @@
   }
 }
 
+@utility xl {
+  .x-heading:is(&) {
+    --x-heading-font-size: 3rem;
+  }
+}
+
 @utility logo {
   .x-heading:is(&) {
     letter-spacing: 0.013em;
