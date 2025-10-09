@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
   import { PhUser } from '@phosphor-icons/vue'
+  import LoginSwitcher from '@/components/LoginSwitcher.vue'
 </script>
 <template>
   <div class="flex h-screen justify-center items-center w-full">
@@ -8,19 +9,7 @@
       class="grid grid-cols-container w-full"
       style="--container-width: 24rem"
     >
-      <div class="flex gap-30 overflow-auto snap-mandatory snap-x max-w-full col-[container-full] px-[calc(((var(--container-breakout-width)-var(--container-width)-3rem)/4))] scroll-pl-[calc(((var(--container-breakout-width)-var(--container-width)-3rem)/4))] ">
-        <span class="x-heading lg text-primary/40 uppercase snap-center font-bold mb-10 tracking-[-0,048rem] min-w-[calc(70vw-((var(--container-breakout-width)-var(--container-width)-3rem)/4))]">
-          Přihlášení
-        </span>
-        <span class="x-heading lg text-dark/15 uppercase snap-center font-bold mb-10 tracking-[-0,048rem] min-w-[calc(70vw-((var(--container-breakout-width)-var(--container-width)-3rem)/4))]">
-
-          Registrace
-        </span>
-        <span class="x-heading lg text-dark/15 uppercase snap-center font-bold mb-10 tracking-[-0,048rem] min-w-[calc(70vw-((var(--container-breakout-width)-var(--container-width)-3rem)/4))]">
-
-          Zapomenuté heslo
-        </span>
-      </div>
+      <LoginSwitcher />
       <div class="flex flex-col gap-4 w-full max-w-sm ">
         <form class="x-form flex flex-col gap-6">
           <div
