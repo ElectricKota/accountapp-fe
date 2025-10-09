@@ -16,15 +16,18 @@
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 550.667 550.667"
         preserveAspectRatio="xMidYMid meet"
-        class="max-sm:size-28 sm:size-32 md:size-40 pl-2 object-contain opacity-0 animate-[blur-in_900ms_0ms_ease-in_forwards] text-primary"
+        class="max-sm:size-28 sm:size-32 md:size-40 pr-2 object-contain opacity-0 animate-[fade-in_900ms_0ms_ease-in_forwards] text-primary mx-auto"
       >
         <use href="#logo-cup-solid" />
       </svg>
+      <h1 class="x-heading logo animate-[slide-in_700ms_200ms_forwards] opacity-0 text-center mx-auto mb-10">
+        AccountApp
+      </h1>
       <LoginSwitcher v-model:active="activeTab" />
-      <div class="flex flex-col gap-4 w-full max-w-sm ">
+      <div class="flex flex-col gap-4 w-full max-w-sm mt-4">
         <form class="x-form flex flex-col gap-6">
           <div
-            class="x-control shadow-lg shadow-primary/10 hover:shadow-xl focus-within:shadow-primary/20 transition-all"
+            class="x-control shadow-lg shadow-primary/10 hover:shadow-xl focus-within:shadow-xl focus-within:shadow-primary/20 transition-all"
           >
             <input
               type="email"
@@ -34,32 +37,27 @@
             <label class=" text-dark/35">E-mail</label>
             <PhUser class="size-5 text-primary/60 me-auto" />
           </div>
-          <div class="x-control">
-            <label>Heslo</label>
-            <input
-              type="password"
-              placeholder=" "
+          <transition>
+            <div
+              class="x-control shadow-lg shadow-primary/10 hover:shadow-xl focus-within:shadow-xl focus-within:shadow-primary/20 transition-all"
             >
-          </div>
+              <input
+                type="password"
+                placeholder=" "
+                required
+              >
+              <label class=" text-dark/35">Heslo</label>
+              <PhUser class="size-5 text-primary/60 me-auto" />
+            </div>
+          </transition>
+
+          <button
+            type="submit"
+            class="x-button bordered w-full accent-primary "
+          >
+            Přihlásit se
+          </button>
         </form>
-
-        <button
-          type="submit"
-          class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition"
-        >
-          Přihlásit se
-        </button>
-
-        <div class="flex justify-between text-sm mt-2">
-          <a
-            href="#"
-            class="text-blue-500 hover:underline"
-          >Zapomenuté heslo?</a>
-          <a
-            href="#"
-            class="text-blue-500 hover:underline"
-          >Registrace</a>
-        </div>
       </div>
     </div>
   </div>

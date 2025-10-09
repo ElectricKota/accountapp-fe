@@ -13,6 +13,7 @@
 @layer utilities {
   .x-control {
     --x-control-outline-width: 0;
+    --x-control-border-radius: var(--radius-lg);
 
     &[data-active] label,
     :where(input, textarea):is(:focus) ~ label,
