@@ -1,3 +1,16 @@
 .x-login-switcher {
+  .active {
+    animation-duration: 999s;
+    animation-delay: 40s;
+  }
 
+  .second {
+    animation-duration: 10s;
+    animation-delay: 2s;
+  }
+
+  .third {
+    animation-duration: 7s;
+    animation-delay: 1s;
+  }
 }

@@ -48,3 +48,33 @@
     opacity: 1;
   }
 }
+
+@keyframes float-loop {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  25% {
+    transform: translate(1.5%, -3%);
+  }
+
+  33% {
+    transform: translate(2%, -4%);
+  }
+
+  50% {
+    transform: translate(0%, -6%);
+  }
+
+  66% {
+    transform: translate(-1.5%, 4%);
+  }
+
+  75% {
+    transform: translate(-3%, -2%);
+  }
+
+  100% {
+    transform: translate(0%, 0%);
+  }
+}

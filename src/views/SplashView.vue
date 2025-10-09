@@ -199,7 +199,7 @@
       preserveAspectRatio="xMidYMid meet"
       class="max-sm:size-28 sm:size-32 md:size-40 pl-2 object-contain opacity-0 animate-[blur-in_900ms_0ms_ease-in_forwards] text-light"
     >
-      <use href="#logo-cup" />
+      <use href="#logo-cup-solid" />
     </svg>
     <div class="flex flex-col pb-18">
       <h1 class="x-heading logo animate-[slide-in_700ms_200ms_forwards] opacity-0">
