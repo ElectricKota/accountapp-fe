@@ -86,10 +86,19 @@
               <label class=" text-dark/35">{{ t('password') }}</label>
               <PhKey class="size-5 text-primary/60 me-auto" />
             </div>
+            <label class="x-check flex items-center">
+              <input
+                type="checkbox"
+                class="size-5"
+                checked
+              >
+              {{ t('keepLogged') }}
+            </label>
+            <div class="my-3 w-full h-[1px] bg-primary/15"></div>
 
             <button
               type="submit"
-              class="x-button bordered w-full mt-4 "
+              class="x-button bordered w-full"
             >
               {{ t('logIn') }}
             </button>
@@ -120,10 +129,10 @@
               <label class=" text-dark/35">{{ t('e-mail') }}</label>
               <PhUser class="size-5 text-primary/60 me-auto" />
             </div>
-
+            <div class="my-3 w-full h-[1px] bg-primary/15"></div>
             <button
               type="submit"
-              class="x-button bordered w-full mt-4 "
+              class="x-button bordered w-full"
             >
               {{ t('sendRecoveryMail') }}
             </button>
@@ -249,10 +258,11 @@
                 </div>
               </div>
             </div>
+            <div class="my-3 w-full h-[1px] bg-primary/15"></div>
 
             <button
               type="submit"
-              class="x-button bordered w-full mt-4 "
+              class="x-button bordered w-full"
               :disabled="!allValid"
             >
               {{ t('sendRecoveryMail') }}

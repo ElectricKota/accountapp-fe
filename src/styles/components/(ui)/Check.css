@@ -3,3 +3,8 @@
 @import "winduum/src/components/check/interactive.css" layer(utilities);
 @import "winduum/src/components/check/invalid.css" layer(utilities);
 
+@layer utilities {
+  .x-check {
+    --x-check-icon-color: var(--color-light);
+  }
+}

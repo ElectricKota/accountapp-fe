@@ -1,12 +1,13 @@
 {
   "e-mail": "E-mail",
   "forgottenPassword": "Obnovení",
+  "keepLogged": "Zůstat přihlášený",
   "logIn": "Přihlásit se",
   "login": "Přihlášení",
   "password": "Heslo",
   "passwordCheck": "Potvrzení hesla",
-  "passwordRequiresNumberAndSpecialChars": "Heslo musí obsahovat číslici a speciální znak.",
   "passwordRequiredLength": "Heslo musí mít minimálně 5 znaků.",
+  "passwordRequiresNumberAndSpecialChars": "Heslo musí obsahovat číslici a speciální znak.",
   "passwordsMustMatch": "Hesla se musí shodovat.",
   "registration": "Registrace",
   "sendRecoveryMail": "Odeslat e-mail pro obnovu"
