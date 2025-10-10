@@ -1,16 +1,15 @@
 <script setup lang="ts">
   import { useI18n } from 'vue-i18n'
   import { ref } from 'vue'
-  const { messages, locale } = useI18n()
-  console.log('Messages for locale', locale.value, messages.value)
+
   const { t } = useI18n()
   const emit = defineEmits(['update:active'])
   const buttons = [
     t('login'),
-    t('registration'),
     t('forgottenPassword'),
+    t('registration'),
   ]
-  const activeIndex = ref(0)
+  const activeIndex = ref(0 as number)
   const next = () => {
     activeIndex.value = (activeIndex.value + 1) % 3
     emit('update:active', activeIndex.value)

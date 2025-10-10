@@ -21,6 +21,5 @@
     --x-button-block-size: 3rem;
     --x-button-border-radius: var(--radius-lg);
     --x-button-hover-background-color: var(--color-primary);
-    --x-button-hover-color: var(--color-light);
   }
 }
