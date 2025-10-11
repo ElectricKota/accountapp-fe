@@ -1,0 +1,7 @@
+.x-login {
+  background-color: #fff;
+  background-image: linear-gradient(#ffffff01, #fff9), url("/src/assets/login-bg.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 2rem) calc(100% - 2rem);
+  background-size: cover, 24vw;
+}

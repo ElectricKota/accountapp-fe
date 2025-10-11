@@ -31,7 +31,7 @@
   })
 </script>
 <template>
-  <div class="flex h-screen justify-center items-center w-full">
+  <div class="x-login flex h-screen justify-center items-center w-full">
     <div
       class="grid grid-cols-container w-full"
       style="--container-width: 24rem"
