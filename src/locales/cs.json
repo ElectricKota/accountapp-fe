@@ -1,4 +1,5 @@
 {
+  "Overview": "Přehled",
   "back": "Zpět",
   "currently": "Aktuálně",
   "e-mail": "E-mail",
@@ -13,5 +14,8 @@
   "passwordRequiresNumberAndSpecialChars": "Heslo musí obsahovat číslici a speciální znak.",
   "passwordsMustMatch": "Hesla se musí shodovat.",
   "registration": "Registrace",
-  "sendRecoveryMail": "Odeslat e-mail pro obnovu"
+  "repeating": "Pravidelné",
+  "sendRecoveryMail": "Odeslat e-mail pro obnovu",
+  "settings": "Nastevení",
+  "welcome": "Úvod"
 }

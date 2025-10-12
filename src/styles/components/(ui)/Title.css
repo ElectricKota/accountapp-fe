@@ -1,15 +1,27 @@
-@import "winduum/src/components/title/props/default.css" layer(theme);
-
 @layer theme {
   :root, :host {
-    --x-title-font-weight: var(--font-weight-semibold);
-    --x-title-font-size: var(--text-sm);
+    --x-title-font-weight: 350;
+    --x-title-font-size: 1rem;
     --x-title-line-height: calc(1em + 0.25rem);
+  }
+}
+
+@layer utilities {
+  .x-title {
+    font-weight: var(--x-title-font-weight);
+    font-size: var(--x-title-font-size);
+    line-height: var(--x-title-line-height);
   }
 }
 
 @utility lg {
   .x-title:is(&) {
-    --x-heading-font-size: var(--text-3xl);
+    --x-title-font-size: var(--text-3xl);
+  }
+}
+
+@utility sm {
+  .x-title:is(&) {
+    --x-title-font-size: 0.75rem;
   }
 }

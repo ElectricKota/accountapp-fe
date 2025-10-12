@@ -47,35 +47,32 @@
 </script>
 <template>
   <header class="w-full flex justify-between items-center gap-3  h-fit py-4 col-[container-breakout] ">
-    <div class="min-w-24 flex items-center justify-start">
+    <div class="w-24 flex items-center justify-start grow-0 shrink-0">
       <a
         v-if="isHome"
         href="#"
-        class="x-link sm:md flex gap-1 items-center text-primary"
+        class="x-link sm:md flex gap-1 items-center text-primary "
         @click="goCustom()"
       >
         <PhArrowBendUpLeft class="size-5 " />
         {{ t('back') }}
       </a>
       <span
-        v-else
-        class="link "
-      >{{ customBackLink }}</span>
-      <span
         v-if="userName"
-        class="x-title text-primary "
+        class="x-title text-primary line-clamp-1"
+        :title="userName"
       >{{ userName }}</span>
     </div>
     <h1
       v-if="heading"
-      class="x-heading md sm:lg text-center"
+      class="x-heading md sm:lg text-center grow w-full"
     >
       {{ heading }}
     </h1>
-    <div class="min-w-24 flex items-center justify-end">
+    <div class="w-24 flex items-center justify-end grow-0 shrink-0">
       <a
         v-if="actionButton"
-        class="x-link link__ico link__ico--plus"
+        class="x-link w-fit"
         @click="emitAction()"
       >{{ actionButton }}</a>
       <div
@@ -84,7 +81,7 @@
       ></div>
       <a
         href="/sign/out"
-        class="x-link sm:md flex gap-1 items-center text-primary"
+        class="x-link sm:md flex gap-1 items-center text-primary w-fit"
       >{{ t('logout') }}</a>
     </div>
   </header>

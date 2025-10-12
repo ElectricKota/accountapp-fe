@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <main class="grid grid-cols-container min-h-screen w-full">
+  <main class="grid grid-cols-container min-h-screen w-full auto-rows-auto">
     <router-view v-slot="{ Component }">
       <transition
         enter-active-class="transition-opacity duration-500 ease-in-out"
@@ -15,6 +15,5 @@
         <component :is="Component" />
       </transition>
     </router-view>
-    <!-- Slot zůstává funkční -->
   </main>
 </template>

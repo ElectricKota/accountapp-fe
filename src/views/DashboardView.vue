@@ -3,8 +3,9 @@
   import { ref, watch } from 'vue'
   import { useI18n } from 'vue-i18n'
   import Header from '@/components/layout/Header.vue'
+  import FooterNavigation from '@/components/layout/FooterNavigation.vue'
 
-  const { t } = useI18n()
+  const { t, n } = useI18n()
 
   const password = ref('')
   const passwordCheck = ref('')
@@ -13,6 +14,8 @@
   const charsCheck = ref(false as boolean)
   const lengthCheck = ref(false as boolean)
   const allValid = ref(false as boolean)
+
+  const amount = ref(3870)
 
   watch([password, passwordCheck], ([newPass, newPassCheck]) => {
     // Kontrola shody hesel
@@ -33,11 +36,17 @@
     :heading="t('currently')"
     user-name="John Doe"
   />
+  <div class="flex gap-2 my-6">
+    <h2 class="x-heading md">
+      Říjen
+      <span :class="['font-normal', amount < 0 ? 'text-error' : 'text-success']">
+        {{ $n(amount, 'currency') }}
+      </span>
+    </h2>
+  </div>
+  <div class="flex gap-2 end-full aspect-square items-center justify-center bg-gray-200 col-[container-full] my-4">
+    Tady bude graf
+  </div>
 
-  <main class="x-main w-full bg-red-100 p-4">
-    <p>A paragraph for the main content.</p>
-    <p>And another one.</p>
-  </main>
-
-  <footer>Here's some contact info</footer>
+  <FooterNavigation />
 </template>
