@@ -25,7 +25,9 @@
 
 <template>
   <component :is="layoutComponent">
-    <router-view />
+    <template #default>
+      <router-view />
+    </template>
   </component>
   <Icons />
 </template>

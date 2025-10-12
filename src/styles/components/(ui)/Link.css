@@ -1,16 +1,23 @@
-@import "winduum/src/components/link/default.css" layer(utilities);
-
 @layer theme {
   :root, :host {
-    --x-link-color: var(--color-accent);
-    --x-link-font-weight: var(--font-weight-semibold);
-    --x-link-font-size: var(--text-2xl);
+    --x-link-color: var(--color-primary);
+    --x-link-hover-color: var(--color-primary);
+    --x-link-font-weight: var(--font-weight-normal);
+    --x-link-font-size: 1rem;
     --x-link-line-height: calc(1em + 0.25rem);
+    --x-link-letter-spacing: -0.01em;
+    --x-link-font-weight: 300;
   }
 }
 
 @layer utilities {
   .x-link {
+    font-weight: var(--x-link-font-weight);
+    font-size: var(--x-link-font-size);
+    line-height: var(--x-link-line-height);
+    letter-spacing: var(--x-link-letter-spacing);
+    text-wrap: pretty;
+
     :where(:any-link, button:enabled, [role="button"]) {
       transition: all var(--default-transition-duration) var(--ease-in-out);
       text-decoration: underline;
@@ -35,5 +42,12 @@
     font-size: 0.9rem;
     font-weight: var(--font-weight-light);
     line-height: 1;
+  }
+}
+
+@utility md {
+  .x-link:is(&) {
+    --x-link-color: var(--color-primary);
+    --x-link-font-size: 1.25rem;
   }
 }

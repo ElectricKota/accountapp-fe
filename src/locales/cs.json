@@ -1,9 +1,12 @@
 {
+  "back": "Zpět",
+  "currently": "Aktuálně",
   "e-mail": "E-mail",
   "forgottenPassword": "Obnovení",
   "keepLogged": "Zůstat přihlášený",
   "logIn": "Přihlásit se",
   "login": "Přihlášení",
+  "logout": "Odhlásit",
   "password": "Heslo",
   "passwordCheck": "Potvrzení hesla",
   "passwordRequiredLength": "Heslo musí mít minimálně 5 znaků.",

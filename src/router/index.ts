@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import DashboardView from '@/views/DashboardView.vue'
 
 const router = createRouter({
   linkActiveClass: 'border border-red-300',
@@ -16,6 +17,13 @@ const router = createRouter({
       name: 'Login',
       component: () => import('../views/LoginView.vue'),
       meta: { layout: 'EmptyLayout' },
+    },
+    {
+      path: '/dashboard',
+      component: DashboardView,
+      meta: {
+        layout: 'DefaultLayout', // nebo nechat prázdné pro výchozí layout
+      },
     },
     {
       path: '/404',

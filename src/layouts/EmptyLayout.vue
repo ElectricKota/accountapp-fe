@@ -18,7 +18,3 @@
     <!-- Slot zůstává funkční -->
   </main>
 </template>
-
-<style scoped>
-
-</style>

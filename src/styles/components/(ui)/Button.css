@@ -13,6 +13,7 @@
     --x-button-block-size: 3rem;
     --x-button-padding-block: 0.375rem;
     --x-button-padding-inline: 0.75rem;
+    --x-button-color: var(--color-primary);
   }
 }
 
@@ -21,5 +22,11 @@
     --x-button-block-size: 3rem;
     --x-button-border-radius: var(--radius-lg);
     --x-button-hover-background-color: var(--color-primary);
+  }
+}
+
+@utility md {
+  .x-button:is(&) {
+    --x-button-font-size: 1.25rem;
   }
 }

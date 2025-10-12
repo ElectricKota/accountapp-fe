@@ -10,6 +10,12 @@
   }
 }
 
+@layer utilities {
+  .x-heading {
+    letter-spacing: -0.013em;
+  }
+}
+
 @utility lg {
   .x-heading:is(&) {
     --x-heading-font-size: var(--text-3xl);
