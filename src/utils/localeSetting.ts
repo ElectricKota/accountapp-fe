@@ -41,7 +41,6 @@ export const numberFormats = {
 }
 
 export const i18n = createI18n({
-  legacy: false, // zapnout Composition API
   locale: browserLocale, // výchozí jazyk
   fallbackLocale: 'cs',
   globalInjection: true,
@@ -52,5 +51,5 @@ export const i18n = createI18n({
 export async function setLocale(locale: string) {
   const messages = await import(`../locales/${locale}.json`)
   i18n.global.setLocaleMessage(locale, messages.default)
-  i18n.global.locale.value = locale
+  i18n.global.locale = locale
 }
