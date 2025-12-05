@@ -3,9 +3,9 @@ import { useClient } from '@/utils/client.ts'
 
 export const useLoginMutation = defineMutation(() => {
   const mutation = useMutation({
-    key: ['login'],
+    key: ['api-sign/login'],
     mutation: async (body: { username: string, password: string, keepLogged: boolean }) => {
-      return await useClient().POST('/login', {
+      return await useClient().POST('/api-sign/login', {
         body,
       })
     },

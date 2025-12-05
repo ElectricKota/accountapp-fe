@@ -1,7 +1,7 @@
 // schema.d.ts
 
 export interface paths {
-    '/login': {
+    '/api-sign/login': {
         post: {
             requestBody: {
                 content: {
