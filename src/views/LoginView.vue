@@ -4,8 +4,17 @@
   import LoginSwitcher from '@/components/LoginSwitcher.vue'
   import { ref, watch } from 'vue'
   import { useI18n } from 'vue-i18n'
+  import { useLoginMutation } from '@/mutations/login.ts'
+  import { useAuthStore } from '@/stores/auth.ts'
 
   const { t } = useI18n()
+  const { mutateAsync: authLogin } = useLoginMutation()
+
+  const login = ref({
+    email: '' as string,
+    password: '' as string,
+    keepLogged: true as boolean,
+  })
 
   const password = ref('')
   const passwordCheck = ref('')
@@ -15,6 +24,30 @@
   const charsCheck = ref(false as boolean)
   const lenghtCheck = ref(false as boolean)
   const allValid = ref(false as boolean)
+
+  const handleLogin = async () => {
+    try {
+      const authStore = useAuthStore()
+      // Posíláme body přesně tak, jak to mutation očekává
+      const body = {
+        username: login.value.email,
+        password: login.value.password,
+        keepLogged: login.value.keepLogged,
+      }
+
+      const response = await authLogin(body) // tady používáme tvou mutation
+      console.log(response, 'response')
+      if (response && response?.token) {
+        authStore.login(response?.token, response?.user)
+
+        // případně redirect nebo jiné akce po přihlášení
+      } else {
+        console.log('Neplatné přihlašovací údaje.')
+      }
+    } catch (err: any) {
+      console.error(err.message || 'Chyba při přihlášení.')
+    }
+  }
 
   watch([password, passwordCheck], ([newPass, newPassCheck]) => {
     // Kontrola shody hesel
@@ -67,6 +100,8 @@
               class="x-control shadow-lg shadow-primary/10 hover:shadow-xl focus-within:shadow-xl focus-within:shadow-primary/20 transition-all "
             >
               <input
+                v-model="login.email"
+
                 type="email"
                 placeholder=" "
                 required
@@ -79,6 +114,8 @@
               class="x-control shadow-lg shadow-primary/10 hover:shadow-xl focus-within:shadow-xl focus-within:shadow-primary/20 transition-all"
             >
               <input
+                v-model="login.password"
+
                 type="password"
                 placeholder=" "
                 required
@@ -88,6 +125,7 @@
             </div>
             <label class="x-check flex items-center">
               <input
+                v-model="login.keepLogged"
                 type="checkbox"
                 class="size-5"
                 checked
@@ -96,8 +134,9 @@
             </label>
 
             <button
-              type="submit"
+              type="button"
               class="x-button bordered w-full"
+              @click="handleLogin"
             >
               {{ t('logIn') }}
             </button>
@@ -129,7 +168,7 @@
               <PhUser class="size-5 text-primary/60 me-auto" />
             </div>
             <button
-              type="submit"
+              type="button"
               class="x-button bordered w-full"
             >
               {{ t('sendRecoveryMail') }}
@@ -258,7 +297,7 @@
             </div>
 
             <button
-              type="submit"
+              type="button"
               class="x-button bordered w-full"
               :disabled="!allValid"
             >
