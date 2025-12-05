@@ -31,7 +31,7 @@
   })
 </script>
 <template>
-  <div class="x-login flex h-screen justify-center items-center w-full">
+  <div class="x-login flex h-screen justify-center items-start w-full pt-[5dvh]">
     <div
       class="grid grid-cols-container w-full"
       style="--container-width: 24rem"
@@ -48,7 +48,7 @@
         AccountApp
       </h1>
       <LoginSwitcher v-model:active="activeTab" />
-      <div class="flex flex-col gap-4 w-full max-w-sm mt-4 relative h-150">
+      <div class="flex flex-col gap-4 w-full max-w-sm mt-4 relative mb-10">
         <transition
           mode="out-in"
           enter-from-class="translate-x-5 opacity-0 scale-80 blur-sm"
@@ -61,7 +61,7 @@
           <form
             v-if="activeTab === 0"
             key="login"
-            class="x-form flex flex-col gap-6 absolute inset-0"
+            class="x-form flex flex-col gap-6 absolute inset-0 h-fit pb-8"
           >
             <div
               class="x-control shadow-lg shadow-primary/10 hover:shadow-xl focus-within:shadow-xl focus-within:shadow-primary/20 transition-all "
@@ -94,7 +94,6 @@
               >
               {{ t('keepLogged') }}
             </label>
-            <div class="my-3 w-full h-[1px] bg-primary/15"></div>
 
             <button
               type="submit"
@@ -116,7 +115,7 @@
           <form
             v-if="activeTab === 1"
             key="recovery"
-            class="x-form flex flex-col gap-6 absolute inset-0"
+            class="x-form flex flex-col gap-6 absolute inset-0 h-fit pb-8"
           >
             <div
               class="x-control shadow-lg shadow-primary/10 hover:shadow-xl focus-within:shadow-xl focus-within:shadow-primary/20 transition-all "
@@ -129,7 +128,6 @@
               <label class=" text-dark/35">{{ t('e-mail') }}</label>
               <PhUser class="size-5 text-primary/60 me-auto" />
             </div>
-            <div class="my-3 w-full h-[1px] bg-primary/15"></div>
             <button
               type="submit"
               class="x-button bordered w-full"
@@ -151,7 +149,7 @@
           <form
             v-if="activeTab === 2"
             key="recovery"
-            class="x-form flex flex-col gap-6 absolute inset-0"
+            class="x-form flex flex-col gap-6 absolute inset-0 h-fit pb-8"
           >
             <div
               class="x-control shadow-lg shadow-primary/10 hover:shadow-xl focus-within:shadow-xl focus-within:shadow-primary/20 transition-all "
@@ -258,7 +256,6 @@
                 </div>
               </div>
             </div>
-            <div class="my-3 w-full h-[1px] bg-primary/15"></div>
 
             <button
               type="submit"

@@ -19,7 +19,7 @@
 
 <template>
   <button
-    class="x-login-switcher w-full h-40 relative rounded-lg"
+    class="x-login-switcher w-full h-32 relative rounded-lg"
     @click="next()"
   >
     <div
