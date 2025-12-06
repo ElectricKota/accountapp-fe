@@ -24,12 +24,11 @@ export default defineConfig({
     },
   },
   server: {
+    proxy: {
+      '/api': {
+        target: 'http://account-app.localhost',
+        changeOrigin: true,
+      } },
     host: true,
-    https: existsSync(join(homedir(), `.ssh/localhost-key.pem`))
-      ? {
-          key: readFileSync(join(homedir(), `.ssh/localhost-key.pem`)),
-          cert: readFileSync(join(homedir(), `.ssh/localhost.pem`)),
-        }
-      : false,
-  },
+    https: false },
 })

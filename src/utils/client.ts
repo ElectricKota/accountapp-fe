@@ -29,7 +29,8 @@ export const useClient = createSharedComposable(() => {
   }
 
   const client = createClient<paths>({
-    baseUrl: import.meta.env.VITE_API_URL,
+    baseUrl: '/',
+    credentials: 'include',
   })
 
   client.use(headersMiddleware)
